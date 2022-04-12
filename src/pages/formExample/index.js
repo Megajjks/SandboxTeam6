@@ -1,10 +1,11 @@
-import React, { useReducer, useState } from "react";
+import React from "react";
 import { reducer } from "./reducer";
 import { actions } from "./reducer/actions";
 import { initialState } from "./reducer/constants";
 
 export const FormExample = () => {
   //   const [variable, setVariable] = useState(true);
+  // eslint-disable-next-line no-undef
   const [state, dispatch] = useReducer(reducer, initialState);
   //   Funcion para controlar los cambios en el formulario
   const handleFormChange = (event) => {
@@ -37,6 +38,7 @@ export const FormExample = () => {
           onChange={handleFormChange}
         />
         <button type="submit">Editar user</button>
+        <button> No tienes una </button>
       </form>
     </div>
   );

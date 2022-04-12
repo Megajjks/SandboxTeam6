@@ -9,6 +9,7 @@ export default function Navbar() {
       <div className="navbar__buttons">
         <span onClick={() => navigate("/")}>Home</span>
         <span onClick={() => navigate("/edit")}>Crear</span>
+        <span onClick={() => navigate("/login")}>Registro</span>
       </div>
     </div>
   );
