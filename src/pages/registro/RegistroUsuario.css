@@ -1,15 +1,18 @@
 /* Estilos del formulario base */
-.registroUsuario {
-    min-width: 24em;
-    margin: 1em;
-    padding: 2em;
-  
+.registroUsuario {  
+    float: right;
+    width: 400px;
+    margin: 7em;
+    padding: 1em;
     background-color: #FFF6FD;
     border-radius: 0.5em;
-  
     font-size: normal;
+    background-position:200%;
   }
+.cuenta {
   
+}
+ 
   /* Estilos de las etiquetas */
   .registroUsuario > label {
     display: flex;
@@ -27,16 +30,20 @@
   
     font-size: large;
   
-    border-radius: 0.25em;
+    border-radius: 0.5em;
   }
   
   /* Estilos de los botones */
   .registroUsuario__submit {
-    width: 100%;
+    width: 40%;
     margin-top: 1em;
+    
     padding: 0.5em;
-  
+    padding-right: -5em;
+    box-sizing: content-box;
+    border-radius: 0.8em;
     cursor: pointer;
+    
   }
   
   /* Estilo del mensaje de error */
@@ -49,8 +56,10 @@
   
   /* Estilo del mensaje de éxito */
   .registroUsuario__success {
+
     color: white;
     background-color: green;
     font-size: medium;
     border-radius: 0.25em;
   }
+  

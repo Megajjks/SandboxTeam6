@@ -10,4 +10,20 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+   
+}
+button {
+  color: #fff;
+  background-color: #03045e;
+  border: none;
+  padding: 1rem 0.5rem;
+  transition: 0.2s background-color ease-out;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 0.3rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #023e8a;
 }

@@ -1,18 +1,26 @@
-.navbar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+.navbar { 
+       width:100px; 
+      line-height: 2em;
+    display: -ms-flexbox 2em;
+    background-position: 0em;
+    align-items:row;
+    padding: 0px;
+     margin: 0px; 
+    float: left;
     color: #fff;
     background-color: #03045e;
-    padding: 1rem 2rem;
+    padding: 2rem;
+    height:44.5em ;
 }
 
 .navbar__buttons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
+    padding: 0px;
+    margin: 0px;
+    width: 0em;
+    display: inline-flex; 
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4rem;
 }
 .navbar__buttons span:hover{
     cursor: pointer;

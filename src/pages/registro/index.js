@@ -1,7 +1,5 @@
 import React from 'react'
-
 import './RegistroUsuario.css'
-
 
 export const RegistroUsuario = () => {
   // Inicializar el estado del formulario en blanco
@@ -22,7 +20,7 @@ export const RegistroUsuario = () => {
     setError('');
 
     // Validar el formulario
-    if (name.trim() === '' || email.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
+    if (name.trim() === 'letras' || email.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
       setError('Please fill in all fields');
       return;
     }
@@ -75,23 +73,28 @@ export const RegistroUsuario = () => {
   return (
     <form className="registroUsuario"onSubmit={handleSubmit}>
       {error && <div className="registroUsuario__error"> {error}  </div>}
+        <div className="cuenta"><h1>
+        CREAR CUENTA
+        </h1>
+        </div>
       <label>
-        Name:
+        Nombre:
         <input type="text" name="name" value={name} onChange={(e) => setName(e.currentTarget.value)} />
       </label>
       <label>
-        Email:
+        Correo electrónico:
         <input type="email" name="email" value={email} onChange={(e) => setEmail(e.currentTarget.value)} />
       </label>
       <label>
-        Password:
+        Contraseña:
         <input type="password" name="password" value={password} onChange={(e) => setPassword(e.currentTarget.value)} />
       </label>
       <label>
-        Confirm Password:
+        Confirmar Contraseña:
         <input type="password" name="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.currentTarget.value)} />
       </label>
-      <button type="submit" className="registroUsuario__submit">Submit</button>
+      <button type="submit" className="registroUsuario__submit">Registrar</button>
     </form >
   )
+  
 };
