@@ -1,6 +1,9 @@
 import React from 'react'
 import './RegistroUsuario.css'
+import { Route, Redirect} from 'react-router-dom';
+// function PrivateRouter ({children, isAuthenticated, ...rest}){
 
+// }
 export const RegistroUsuario = () => {
   // Inicializar el estado del formulario en blanco
   const [name, setName] = React.useState('');
