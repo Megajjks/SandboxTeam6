@@ -1,6 +1,7 @@
 import React from "react";
 import Select from 'react-select';
 import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'; 
+import { Link } from "react-router-dom";
 
 export const RegistroUsuario = () => {
   // Inicializar el estado del formulario en blanco
@@ -129,6 +130,9 @@ export const RegistroUsuario = () => {
         options={options} 
         onChange= {onDropdownChange}> 
         </Select>
+      </label>
+      <label>
+        <Link to= "/Login"> Ya tengo una cuenta </Link>
       </label>
 
       <button type="submit" className="registroUsuario__submit">
