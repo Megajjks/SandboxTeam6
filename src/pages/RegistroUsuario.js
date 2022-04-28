@@ -107,12 +107,16 @@ export const RegistroUsuario = () => {
       </label>
       <label>
         Contraseña:
-        <input type= {eye ? "text": "password"} name="password" value={password} onChange={(e) => setPassword(e.currentTarget.value)} />
+        <input pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,20}$"
+        type= {eye ? "text": "password"} name="password" value={password} onChange={(e) => setPassword(e.currentTarget.value)} />
         <button className='BotónOjo' onClick={toggleEye}> 
             {eye ? <AiOutlineEyeInvisible/> : 
           <AiOutlineEye/> 
             }
         </button>
+      <label>
+      *La contraseña debe contener un mínimo de 6 y un máximo de 20 caracteres alfanuméricos; al menos una letra mayúscula y un caracter especial.
+      </label>
       </label>
       <label>
         Confirmar contraseña:
