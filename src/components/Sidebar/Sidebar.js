@@ -124,15 +124,15 @@ const linksArray = [
     //     notification: 0,
     // },
     {
-        label: "Login",
+        label: "SignIn",
         icon: <BsPeople />,
-        to: "/login",
+        to: "/signIn",
         notification: 0,
     },
     {
-        label: "Registro",
+        label: "RegistroUsuario",
         icon: <AiOutlineApartment />,
-        to: "/registro",
+        to: "/registroUsuario",
         notification: 0,
     },
 ];

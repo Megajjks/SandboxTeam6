@@ -1,7 +1,8 @@
 import React from "react";
 import Select from 'react-select';
+import { SFixedContainer } from "../components/Containers/styles";
+// import Form from "../components/Form/Form";
 import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'; 
-import { Link } from "react-router-dom";
 
 export const RegistroUsuario = () => {
   // Inicializar el estado del formulario en blanco
@@ -95,6 +96,7 @@ export const RegistroUsuario = () => {
 
   // Mostrar el formulario
   return (
+    <SFixedContainer size={275}>
     <form className="registroUsuario"onSubmit={handleSubmit}>
       {error && <div className="registroUsuario__error"> {error}  </div>}
       <label>
@@ -107,16 +109,12 @@ export const RegistroUsuario = () => {
       </label>
       <label>
         Contraseña:
-        <input pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,20}$"
-        type= {eye ? "text": "password"} name="password" value={password} onChange={(e) => setPassword(e.currentTarget.value)} />
+        <input type= {eye ? "text": "password"} name="password" value={password} onChange={(e) => setPassword(e.currentTarget.value)} />
         <button className='BotónOjo' onClick={toggleEye}> 
             {eye ? <AiOutlineEyeInvisible/> : 
           <AiOutlineEye/> 
             }
         </button>
-      <label>
-      *La contraseña debe contener un mínimo de 6 y un máximo de 20 caracteres alfanuméricos; al menos una letra mayúscula y un caracter especial.
-      </label>
       </label>
       <label>
         Confirmar contraseña:
@@ -135,14 +133,13 @@ export const RegistroUsuario = () => {
         onChange= {onDropdownChange}> 
         </Select>
       </label>
-      <label>
-        <Link to= "/Login"> Ya tengo una cuenta </Link>
-      </label>
 
       <button type="submit" className="registroUsuario__submit">
-        Registrar
+        Registro
         </button>
 
     </form >
+    </SFixedContainer>
   )
 };
+export default RegistroUsuario;
