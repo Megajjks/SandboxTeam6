@@ -26,7 +26,7 @@ import {
     AiOutlineSearch,
     AiOutlineSetting,
 } from "react-icons/ai";
-import { MdLogout, MdOutlineAnalytics } from "react-icons/md";
+import { MdLogout } from "react-icons/md";
 import { BsPeople } from "react-icons/bs";
 
 import { ThemeContext } from "./../../App";
