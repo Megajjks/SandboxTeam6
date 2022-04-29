@@ -139,7 +139,7 @@ export const RegistroUsuario = () => {
         </Select>
       </label>
       <label>
-        <Link to= "/signIn"> Ya tengo una cuenta </Link>
+        <Link to= "/login"> Ya tengo una cuenta </Link>
       </label>
 
       <button type="submit" className="registroUsuario__submit">
