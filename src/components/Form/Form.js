@@ -50,6 +50,7 @@ const Form = ({ title, formArr, submitBtn, onSubmit, redirect }) => {
                 <SRedirect>
                     <SRedirectLabel>{redirect.label}&nbsp;</SRedirectLabel>
                     <SRedirectLink to={redirect.link.to}>{redirect.link.label}</SRedirectLink>
+                    <SRedirectLink to="/forgetPassword">Olvidé contraseña</SRedirectLink>
                 </SRedirect>
             )}
         </SForm>

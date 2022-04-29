@@ -112,7 +112,7 @@ const Sidebar = () => {
 
 const linksArray = [
     {
-        label: "Home",
+        label: "Dashboard",
         icon: <AiOutlineHome />,
         to: "/",
         notification: 0,
@@ -124,15 +124,15 @@ const linksArray = [
     //     notification: 0,
     // },
     {
-        label: "SignIn",
+        label: "Login",
         icon: <BsPeople />,
-        to: "/signIn",
+        to: "/login",
         notification: 0,
     },
     {
-        label: "RegistroUsuario",
+        label: "Register",
         icon: <AiOutlineApartment />,
-        to: "/registroUsuario",
+        to: "/register",
         notification: 0,
     },
 ];

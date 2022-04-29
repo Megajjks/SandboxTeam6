@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { SFixedContainer } from "../components/Containers/styles";
 import Form from "../components/Form/Form";
 
@@ -18,9 +19,10 @@ const SignIn = () => {
                     label: "No tienes cuenta?",
                     link: {
                         label: "Registro",
-                        to: "/registroUsuario",
+                        to: "/register",
                     },
                 }}
+               
             />
         </SFixedContainer>
     );

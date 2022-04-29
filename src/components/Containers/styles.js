@@ -10,9 +10,17 @@ export const SFlexContainer = styled.div`
 
 export const SFixedContainer = styled.div`
     border:solid 2px green;
-    width: 100vw;
+    width: 25vw;
     right: 50rem;
-    margin: 0 auto;
+    margin: 2rem;
+    float: right;
+    width: 400px;
+     margin: 7em;
+   padding: 1em;
+  background-color: #FFF6FD;
+  border-radius: 0.5em;
+   font-size: normal;
+   background-position:200%;
     
 `;
 
