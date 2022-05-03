@@ -1,15 +1,18 @@
+import React from "react";
 //import { Link } from "react-router-dom";
 import { SFixedContainer } from "../components/Containers/styles";
 import Form from "../components/Form/Form";
 
+
 const SignIn = () => {
+      
     const onSubmitHandler = (form, callback) => {
         console.log("Sign In submitted: ", form);
         callback();
     };
 
     return (
-        <SFixedContainer size={275}>
+        <SFixedContainer >
             <Form
                 title={"Sign In"}
                 formArr={formArr}

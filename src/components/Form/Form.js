@@ -21,6 +21,8 @@ const Form = ({ title, formArr, submitBtn, onSubmit, redirect }) => {
 
     const onChangeHandler = (e) => setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
     const onSumbitHandler = () => onSubmit(form, () => setForm(initialForm));
+    
+  
 
     const hasRedirect = !!redirect;
     return (
@@ -50,7 +52,7 @@ const Form = ({ title, formArr, submitBtn, onSubmit, redirect }) => {
                 <SRedirect>
                     <SRedirectLabel>{redirect.label}&nbsp;</SRedirectLabel>
                     <SRedirectLink to={redirect.link.to}>{redirect.link.label}</SRedirectLink>
-                    <SRedirectLink to="/forgetPassword">Olvidé contraseña</SRedirectLink>
+                    <SRedirectLink to="/forgetPassword">   Olvidé contraseña</SRedirectLink>
                 </SRedirect>
             )}
         </SForm>

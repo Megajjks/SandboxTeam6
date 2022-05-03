@@ -2,12 +2,21 @@ import React from "react";
 import Select from 'react-select';
 import { SFixedContainer } from "../components/Containers/styles";
 // import Form from "../components/Form/Form";
+import {
+  SBbutton,
+  SBbuutton,
+  SFform,
+  SFoormTitle,
+  SIinput,
+  SLlabel,
+  SLlaabel,
+  SDdiv,
+} from "../components/Form/styles";
 import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'; 
 import { Link } from "react-router-dom";
 
 export const RegistroUsuario = () => {
   // Inicializar el estado del formulario en blanco
-  const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [confirmPassword, setConfirmPassword] = React.useState('');
@@ -46,7 +55,7 @@ export const RegistroUsuario = () => {
     setError('');
 
     // Validar el formulario
-    if (name.trim() === '' || email.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
+    if (email.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
       setError('Please fill in all fields');
       return;
     }
@@ -58,7 +67,6 @@ export const RegistroUsuario = () => {
     }
 
     console.log(`Data submitted:
-    name: ${name}
     email: ${email}
     password: ${password}
     confirmPassword: ${confirmPassword}`);
@@ -68,7 +76,6 @@ export const RegistroUsuario = () => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        name,
         email,
         password,
         confirmPassword
@@ -97,56 +104,52 @@ export const RegistroUsuario = () => {
 
   // Mostrar el formulario
   return (
-    <SFixedContainer>
-    <form className="registroUsuario"onSubmit={handleSubmit}>
-      {error && <div className="registroUsuario__error"> {error}  </div>}
-      <label>
-        Nombre:
-        <input type="text" name="name" value={name} onChange={(e) => setName(e.currentTarget.value)} />
-      </label>
-      <label>
+    <SFixedContainer> <SFoormTitle> CREAR CUENTA </SFoormTitle>
+    <SFform className="registroUsuario"onSubmit={handleSubmit}>
+      {error && <SDdiv className="registroUsuario__error"> {error}  </SDdiv>}
+      <SLlabel>
         Correo electrónico:
-        <input type="email" name="email" value={email} onChange={(e) => setEmail(e.currentTarget.value)} />
-      </label>
-      <label>
+        <SIinput type="email" name="email" value={email} onChange={(e) => setEmail(e.currentTarget.value)} />
+      </SLlabel>
+      <SLlabel>
         Contraseña:
-        <input pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,20}$"
+        <SIinput pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@-#$!%*?&])[A-Za-z\d@-#$!%*?&]{6,20}$"
         type= {eye ? "text": "password"} name="password" value={password} onChange={(e) => setPassword(e.currentTarget.value)} />
-        <button className='BotónOjo' onClick={toggleEye}> 
+        <SBbuutton  onClick={toggleEye}> 
             {eye ? <AiOutlineEyeInvisible/> : 
           <AiOutlineEye/> 
             }
-        </button>
-      </label>
-      <label>
+        </SBbuutton>
+      </SLlabel>
+      <SLlaabel>
       *La contraseña debe contener un mínimo de 6 y un máximo de 20 caracteres alfanuméricos; al menos una letra mayúscula y un caracter especial.
-      </label>
-      <label>
+      </SLlaabel>
+      <SLlabel>
         Confirmar contraseña:
-        <input type= {eye ? "text": "password"} name="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.currentTarget.value)} />
-        <button className='BotónOjo2' onClick={toggleEye2}> 
+        <SIinput type= {eye ? "text": "password"} name="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.currentTarget.value)} />
+        <SBbuutton onClick={toggleEye2}> 
             {eye ? <AiOutlineEyeInvisible/> : 
           <AiOutlineEye/> 
             }
-        </button>
-      </label>
-      <label> 
+        </SBbuutton>
+      </SLlabel>
+      <SLlabel> 
         ¿Para qué usarás Get Talent?
         <Select
         value= {value}
         options={options} 
         onChange= {onDropdownChange}> 
         </Select>
-      </label>
-      <label>
+      </SLlabel>
+      <SLlaabel>
         <Link to= "/login"> Ya tengo una cuenta </Link>
-      </label>
+      </SLlaabel>
 
-      <button type="submit" className="registroUsuario__submit">
+      <SBbutton type="submit" className="registroUsuario__submit">
         Registro
-        </button>
+        </SBbutton>
 
-    </form >
+    </SFform >
     </SFixedContainer>
   )
 };
