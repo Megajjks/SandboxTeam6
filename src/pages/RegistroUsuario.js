@@ -8,9 +8,9 @@ import {
   SFform,
   SFoormTitle,
   SIinput,
+  SDdiv,
   SLlabel,
   SLlaabel,
-  SDdiv,
 } from "../components/Form/styles";
 import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'; 
 import { Link } from "react-router-dom";
@@ -66,10 +66,10 @@ export const RegistroUsuario = () => {
       return;
     }
 
-    console.log(`Data submitted:
-    email: ${email}
-    password: ${password}
-    confirmPassword: ${confirmPassword}`);
+    // console.log(`Data submitted:
+    // email: ${email}
+    // password: ${password}
+    // confirmPassword: ${confirmPassword}`);
 
     // Enviar el formulario
     const requestOptions = {
@@ -113,7 +113,7 @@ export const RegistroUsuario = () => {
       </SLlabel>
       <SLlabel>
         Contraseña:
-        <SIinput pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@-#$!%*?&])[A-Za-z\d@-#$!%*?&]{6,20}$"
+        <SIinput pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!-@#()$%^+=&*])[A-Za-z\d~!-@#()$%^+=&*]{6,20}$"
         type= {eye ? "text": "password"} name="password" value={password} onChange={(e) => setPassword(e.currentTarget.value)} />
         <SBbuutton  onClick={toggleEye}> 
             {eye ? <AiOutlineEyeInvisible/> : 
@@ -146,7 +146,7 @@ export const RegistroUsuario = () => {
       </SLlaabel>
 
       <SBbutton type="submit" className="registroUsuario__submit">
-        Registro
+        ENTRAR
         </SBbutton>
 
     </SFform >

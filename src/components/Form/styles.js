@@ -79,7 +79,7 @@ export const SRedirectLink = styled(Link)`
 export const SFoormTitle = styled.div`
     font-size: 25px;
     font-weight: 600;
-    margin-left: 1.5em;
+    margin-left: 1.8em;
     
 `;
 

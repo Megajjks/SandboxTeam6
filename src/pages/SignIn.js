@@ -14,9 +14,9 @@ const SignIn = () => {
     return (
         <SFixedContainer >
             <Form
-                title={"Sign In"}
+                title={"INICIAR SESIÓN"}
                 formArr={formArr}
-                submitBtn={"Sign In"}
+                submitBtn={"ENTRAR"}
                 onSubmit={onSubmitHandler}
                 redirect={{
                     label: "No tienes cuenta?",

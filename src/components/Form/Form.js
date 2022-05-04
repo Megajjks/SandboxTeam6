@@ -22,10 +22,9 @@ const Form = ({ title, formArr, submitBtn, onSubmit, redirect }) => {
     const onChangeHandler = (e) => setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
     const onSumbitHandler = () => onSubmit(form, () => setForm(initialForm));
     
-  
 
     const hasRedirect = !!redirect;
-    return (
+    return (        
         <SForm autoComplete={"off"}>
             <SFormTitle>{title}</SFormTitle>
             {formArr.map(({ label, name, type }, index) => (
