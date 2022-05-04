@@ -14,6 +14,7 @@ import {
 } from "../components/Form/styles";
 import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'; 
 import { Link } from "react-router-dom";
+import cover from "../assets/ilustration/Get-Talent.jpg";
 
 export const RegistroUsuario = () => {
   // Inicializar el estado del formulario en blanco
@@ -104,7 +105,8 @@ export const RegistroUsuario = () => {
 
   // Mostrar el formulario
   return (
-    <SFixedContainer> <SFoormTitle> CREAR CUENTA </SFoormTitle>
+    
+    <SFixedContainer>  <SFoormTitle> CREAR CUENTA </SFoormTitle>
     <SFform className="registroUsuario"onSubmit={handleSubmit}>
       {error && <SDdiv className="registroUsuario__error"> {error}  </SDdiv>}
       <SLlabel>
@@ -144,13 +146,17 @@ export const RegistroUsuario = () => {
       <SLlaabel>
         <Link to= "/login"> Ya tengo una cuenta </Link>
       </SLlaabel>
-
+      
       <SBbutton type="submit" className="registroUsuario__submit">
         ENTRAR
         </SBbutton>
-
+       
     </SFform >
+    <img src={cover} alt="cover.alt"/>
     </SFixedContainer>
-  )
+        
+    
+  
+  );
 };
 export default RegistroUsuario;

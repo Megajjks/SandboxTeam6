@@ -23,3 +23,11 @@ export const SFixedContainer = styled.div`
     
 `;
 
+export const img = styled.img`
+     border-radius: 50%;
+   width: 10em;
+    /* right: 110rem; */
+    margin: 1rem;
+    float: center; 
+
+`;

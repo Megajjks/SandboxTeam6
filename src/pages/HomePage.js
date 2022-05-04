@@ -1,7 +1,16 @@
 import React from "react";
-
-const Dashboard = () => {
-    return <h1>ealeeeeeee</h1>;
+import Sidebar from "../components/Sidebar/Sidebar";
+import { SLayout, SMain } from "../components/Layout/styles";
+const HomePage = ({ children }) => {
+        return (
+            
+            <SLayout>
+                <Sidebar />
+                <SMain>{children}</SMain>
+            </SLayout>
+        );
+    
+    
 };
 
-export default Dashboard;
+export default HomePage;

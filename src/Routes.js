@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-//import HomePage from "./pages/HomePage";
+import HomePage from "./pages/HomePage";
 // import Login from "./pages/Login";
 import Layout from "./components/Layout/Layout";
 import { RegistroUsuario } from "./pages/RegistroUsuario";
@@ -13,6 +13,7 @@ const Routes = () => {
             <Route exact path="/" >
             <SignIn/>
             </Route>
+           
             <Route exact path="/login" >
             <SignIn/>
             </Route>
@@ -25,9 +26,17 @@ const Routes = () => {
             {/* <Route element={<Layout/>}>
                  <Route exact path="/dashboard" element={<HomePage />}/>
             </Route> */}
+           
+             
             <Route exact path="/dashboard">
-                <Layout/>
+            <Layout/>
             </Route>
+            <Route exact path="/home" >
+            <HomePage/>
+            </Route>
+            {/* <Route exact path="/HomePage" >
+            <HomePage/>
+            </Route> */}
         </Switch>
     );
 };

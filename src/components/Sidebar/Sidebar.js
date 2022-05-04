@@ -112,11 +112,17 @@ const Sidebar = () => {
 
 const linksArray = [
     {
-        label: "Dashboard",
+        label: "HomePage",
         icon: <AiOutlineHome />,
-        to: "/",
+        to: "/home",
         notification: 0,
     },
+    // {
+    //     label: "HomePAge",
+    //     icon: <AiOutlineHome />,
+    //     to: "/home",
+    //     notification: 0,
+    // },
     // {
     //     label: "Clientes",
     //     icon: <MdOutlineAnalytics />,

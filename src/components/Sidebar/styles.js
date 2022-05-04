@@ -8,7 +8,8 @@ export const SSidebar = styled.div`
     background: ${({ theme }) => theme.bg};
     height: 100vh;
     padding: ${v.lgSpacing};
-    background-color: rgb(96,105,255);
+    background: linear-gradient(#173B5A, #45A9FF);
+    /* background-color: rgb(100,15,255); */
     position: relative;
 `;
 
