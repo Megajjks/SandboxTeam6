@@ -9,12 +9,16 @@ import {
   SFoormTitle,
   SIinput,
   SDdiv,
+  SIimg,
   SLlabel,
   SLlaabel,
+  
 } from "../components/Form/styles";
 import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'; 
 import { Link } from "react-router-dom";
 import cover from "../assets/ilustration/Get-Talent.jpg";
+// import Image from "../assets/ilustration/Image"
+
 
 export const RegistroUsuario = () => {
   // Inicializar el estado del formulario en blanco
@@ -104,59 +108,56 @@ export const RegistroUsuario = () => {
     return <div className="registroUsuario__success"> Registro exitoso </div>
 
   // Mostrar el formulario
+  
   return (
     
-    <SFixedContainer>  <SFoormTitle> CREAR CUENTA </SFoormTitle>
-    <SFform className="registroUsuario"onSubmit={handleSubmit}>
-      {error && <SDdiv className="registroUsuario__error"> {error}  </SDdiv>}
-      <SLlabel>
-        Correo electrónico:
-        <SIinput type="email" name="email" value={email} onChange={(e) => setEmail(e.currentTarget.value)} />
-      </SLlabel>
-      <SLlabel>
-        Contraseña:
-        <SIinput pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!-@#()$%^+=&*])[A-Za-z\d~!-@#()$%^+=&*]{6,20}$"
-        type= {eye ? "text": "password"} name="password" value={password} onChange={(e) => setPassword(e.currentTarget.value)} />
-        <SBbuutton  onClick={toggleEye}> 
-            {eye ? <AiOutlineEyeInvisible/> : 
-          <AiOutlineEye/> 
-            }
-        </SBbuutton>
-      </SLlabel>
-      <SLlaabel>
-      *La contraseña debe contener un mínimo de 6 y un máximo de 20 caracteres alfanuméricos; al menos una letra mayúscula y un caracter especial.
-      </SLlaabel>
-      <SLlabel>
-        Confirmar contraseña:
-        <SIinput type= {eye ? "text": "password"} name="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.currentTarget.value)} />
-        <SBbuutton onClick={toggleEye2}> 
-            {eye ? <AiOutlineEyeInvisible/> : 
-          <AiOutlineEye/> 
-            }
-        </SBbuutton>
-      </SLlabel>
-      <SLlabel> 
-        ¿Para qué usarás Get Talent?
-        <Select
-        value= {value}
-        options={options} 
-        onChange= {onDropdownChange}> 
-        </Select>
-      </SLlabel>
-      <SLlaabel>
-        <Link to= "/login"> Ya tengo una cuenta </Link>
-      </SLlaabel>
-      
-      <SBbutton type="submit" className="registroUsuario__submit">
-        ENTRAR
+    <><SFixedContainer>
+      <SFoormTitle> CREAR CUENTA </SFoormTitle>
+      <SFform className="registroUsuario" onSubmit={handleSubmit}>
+        {error && <SDdiv className="registroUsuario__error"> {error}  </SDdiv>}
+        <SLlabel>
+          Correo electrónico:
+          <SIinput type="email" name="email" value={email} onChange={(e) => setEmail(e.currentTarget.value)} />
+        </SLlabel>
+        <SLlabel>
+          Contraseña:
+          <SIinput pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!-@#()$%^+=&*])[A-Za-z\d~!-@#()$%^+=&*]{6,20}$"
+            type={eye ? "text" : "password"} name="password" value={password} onChange={(e) => setPassword(e.currentTarget.value)} />
+          <SBbuutton onClick={toggleEye}>
+            {eye ? <AiOutlineEyeInvisible /> :
+              <AiOutlineEye />}
+          </SBbuutton>
+        </SLlabel>
+        <SLlaabel>
+          *La contraseña debe contener un mínimo de 6 y un máximo de 20 caracteres alfanuméricos; al menos una letra mayúscula y un caracter especial.
+        </SLlaabel>
+        <SLlabel>
+          Confirmar contraseña:
+          <SIinput type={eye ? "text" : "password"} name="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.currentTarget.value)} />
+          <SBbuutton onClick={toggleEye2}>
+            {eye ? <AiOutlineEyeInvisible /> :
+              <AiOutlineEye />}
+          </SBbuutton>
+        </SLlabel>
+        <SLlabel>
+          ¿Para qué usarás Get Talent?
+          <Select
+            value={value}
+            options={options}
+            onChange={onDropdownChange}>
+          </Select>
+        </SLlabel>
+        <SLlaabel>
+          <Link to="/login"> Ya tengo una cuenta </Link>
+        </SLlaabel>
+
+        <SBbutton type="submit" className="registroUsuario__submit">
+          ENTRAR
         </SBbutton>
-       
-    </SFform >
-    <img src={cover} alt="cover.alt"/>
+      </SFform>
     </SFixedContainer>
-        
-    
+    <SIimg src={cover} alt="coverAlt" /></>
   
-  );
+ );
 };
 export default RegistroUsuario;

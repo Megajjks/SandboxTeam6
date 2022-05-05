@@ -24,7 +24,7 @@ const Form = ({ title, formArr, submitBtn, onSubmit, redirect }) => {
     
 
     const hasRedirect = !!redirect;
-    return (        
+    return (      
         <SForm autoComplete={"off"}>
             <SFormTitle>{title}</SFormTitle>
             {formArr.map(({ label, name, type }, index) => (

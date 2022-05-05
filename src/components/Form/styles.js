@@ -166,3 +166,16 @@ export const SDdiv = styled.div`
         margin-bottom: ${v.smSpacing};
     }
 `;
+
+export const SIimg = styled.img`
+    width: 45em;
+    height: 50em;
+    float: left;
+    margin-right: -100em;
+
+    /* img {
+        max-width: 100%;
+        height: auto;
+    } */
+
+// `;

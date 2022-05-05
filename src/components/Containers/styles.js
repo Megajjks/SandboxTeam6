@@ -9,7 +9,7 @@ export const SFlexContainer = styled.div`
 `;
 
 export const SFixedContainer = styled.div`
-    width: 25vw;
+    width: 20vw;
     right: 50rem;
     margin: 2rem;
     float: right;
@@ -23,11 +23,3 @@ export const SFixedContainer = styled.div`
     
 `;
 
-export const img = styled.img`
-     border-radius: 50%;
-   width: 10em;
-    /* right: 110rem; */
-    margin: 1rem;
-    float: center; 
-
-`;

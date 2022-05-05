@@ -2,7 +2,8 @@ import React from "react";
 //import { Link } from "react-router-dom";
 import { SFixedContainer } from "../components/Containers/styles";
 import Form from "../components/Form/Form";
-
+import { SIimg } from "../components/Form/styles";
+import cover from "../assets/ilustration/Get-Talent.jpg";
 
 const SignIn = () => {
       
@@ -12,7 +13,7 @@ const SignIn = () => {
     };
 
     return (
-        <SFixedContainer >
+        <><SFixedContainer>
             <Form
                 title={"INICIAR SESIÓN"}
                 formArr={formArr}
@@ -24,10 +25,8 @@ const SignIn = () => {
                         label: "Registro",
                         to: "/register",
                     },
-                }}
-               
-            />
-        </SFixedContainer>
+                }} />
+        </SFixedContainer><SIimg src={cover} alt="coverAlt" /></>
     );
 };
 
