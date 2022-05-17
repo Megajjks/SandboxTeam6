@@ -28,7 +28,7 @@ import {
 } from "react-icons/ai";
 import { MdLogout } from "react-icons/md";
 import { BsPeople } from "react-icons/bs";
-
+import {MdOutlineAnalytics} from "react-icons/md"
 import { ThemeContext } from "./../../App";
 import { useLocation } from "react-router-dom";
 
@@ -123,12 +123,12 @@ const linksArray = [
     //     to: "/home",
     //     notification: 0,
     // },
-    // {
-    //     label: "Clientes",
-    //     icon: <MdOutlineAnalytics />,
-    //     to: "/clientes",
-    //     notification: 0,
-    // },
+    {
+        label: "RegistroVacantes",
+        icon: <MdOutlineAnalytics />,
+        to: "/registerva",
+        notification: 0,
+    },
     {
         label: "Login",
         icon: <BsPeople />,

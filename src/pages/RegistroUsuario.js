@@ -4,7 +4,7 @@ import { SFixedContainer } from "../components/Containers/styles";
 // import Form from "../components/Form/Form";
 import {
   SBbutton,
-  SBbuutton,
+  // SBbuutton,
   SFform,
   SFoormTitle,
   SIinput,
@@ -12,13 +12,16 @@ import {
   SIimg,
   SLlabel,
   SLlaabel,
-  
+
 } from "../components/Form/styles";
-import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'; 
+// import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { Link } from "react-router-dom";
+
+import ToggleInput from "../components/Form/Input";
 import cover from "../assets/ilustration/Get-Talent.jpg";
 // import Image from "../assets/ilustration/Image"
 
+const passwordPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*)(?=.*[~!-@#()$%^+=&*])[A-Za-z~!-@#()$%^+=&*]{6,20}$";
 
 export const RegistroUsuario = () => {
   // Inicializar el estado del formulario en blanco
@@ -26,32 +29,23 @@ export const RegistroUsuario = () => {
   const [password, setPassword] = React.useState('');
   const [confirmPassword, setConfirmPassword] = React.useState('');
   const [value, setValue] = React.useState(null);
-  const [eye, setEye] =  React.useState(false);
 
   // Valores para dropdown y constante de cambio
   const options = [
-    {value: 'Empresa', label: 'Soy una empresa'},
-    {value: 'Solicitante', label: 'Busco trabajo'}
+    { value: 'Empresa', label: 'Soy una empresa' },
+    { value: 'Solicitante', label: 'Busco trabajo' }
   ]
 
   const onDropdownChange = (value) => {
-    setValue (value);
-    console.log (value);
+    setValue(value);
+    console.log(value);
   }
 
-  // Función mostrar y ocultar contraseña
-  const toggleEye = () => {
-    setEye (prevState => !prevState);
-  } 
-  const toggleEye2 = () => {
-    setEye (prevState => !prevState);
-  } 
-  
   // Inicializar el estado de error y éxito 
   const [error, setError] = React.useState('');
   const [success, setSuccess] = React.useState(false);
 
- 
+
   const handleSubmit = (event) => {
     // Prevenir el comportamiento predeterminado del formulario 
     event.preventDefault();
@@ -108,9 +102,9 @@ export const RegistroUsuario = () => {
     return <div className="registroUsuario__success"> Registro exitoso </div>
 
   // Mostrar el formulario
-  
+
   return (
-    
+
     <><SFixedContainer>
       <SFoormTitle> CREAR CUENTA </SFoormTitle>
       <SFform className="registroUsuario" onSubmit={handleSubmit}>
@@ -121,23 +115,14 @@ export const RegistroUsuario = () => {
         </SLlabel>
         <SLlabel>
           Contraseña:
-          <SIinput pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!-@#()$%^+=&*])[A-Za-z\d~!-@#()$%^+=&*]{6,20}$"
-            type={eye ? "text" : "password"} name="password" value={password} onChange={(e) => setPassword(e.currentTarget.value)} />
-          <SBbuutton onClick={toggleEye}>
-            {eye ? <AiOutlineEyeInvisible /> :
-              <AiOutlineEye />}
-          </SBbuutton>
+          <ToggleInput name="password" value={password} onChange={(e) => setPassword(e.currentTarget.value)} pattern={passwordPattern} />
         </SLlabel>
         <SLlaabel>
           *La contraseña debe contener un mínimo de 6 y un máximo de 20 caracteres alfanuméricos; al menos una letra mayúscula y un caracter especial.
         </SLlaabel>
         <SLlabel>
           Confirmar contraseña:
-          <SIinput type={eye ? "text" : "password"} name="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.currentTarget.value)} />
-          <SBbuutton onClick={toggleEye2}>
-            {eye ? <AiOutlineEyeInvisible /> :
-              <AiOutlineEye />}
-          </SBbuutton>
+          <ToggleInput name="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.currentTarget.value)} />
         </SLlabel>
         <SLlabel>
           ¿Para qué usarás Get Talent?
@@ -156,8 +141,8 @@ export const RegistroUsuario = () => {
         </SBbutton>
       </SFform>
     </SFixedContainer>
-    <SIimg src={cover} alt="coverAlt" /></>
-  
- );
+      <SIimg src={cover} alt="coverAlt" /></>
+
+  );
 };
 export default RegistroUsuario;

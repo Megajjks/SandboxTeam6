@@ -1,44 +1,35 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 // import Login from "./pages/Login";
 import Layout from "./components/Layout/Layout";
 import { RegistroUsuario } from "./pages/RegistroUsuario";
-import SignIn from "./pages/SignIn";
+import Login from "./pages/Login";
 
-const Routes = () => {
+export default function AppRoutes() {
     return (
-        <Switch> 
-            {/* Rutas de accesso publico */}
-            <Route exact path="/" >
-            <SignIn/>
-            </Route>
-           
-            <Route exact path="/login" >
-            <SignIn/>
-            </Route>
-                  
-            <Route exact path="/register">
-            <RegistroUsuario />
-            </Route>
-            
-            {/* Rutas privadas (acceso a gente que ya se logueo) */}
-            {/* <Route element={<Layout/>}>
+        <Router>
+            <Routes>
+                {/* Rutas de accesso publico */}
+                <Route path="/" element={<HomePage />} />
+
+                <Route path="/login" element={<Login />} />
+
+                <Route path="/register" element={<RegistroUsuario />} />
+
+                {/* Rutas privadas (acceso a gente que ya se logueo) */}
+                {/* <Route element={<Layout/>}>
                  <Route exact path="/dashboard" element={<HomePage />}/>
             </Route> */}
-           
-             
-            <Route exact path="/dashboard">
-            <Layout/>
-            </Route>
-            <Route exact path="/home" >
-            <HomePage/>
-            </Route>
-            {/* <Route exact path="/HomePage" >
+
+                <Route path="/dashboard" element={<Layout />} />
+
+                <Route path="/registerva" element={<HomePage />} />
+
+                <Route path="*" element={<h1>Error 404: No encontrado</h1>} />
+                {/* <Route path="/HomePage" >
             <HomePage/>
             </Route> */}
-        </Switch>
+            </Routes>
+        </Router>
     );
 };
-
-export default Routes;

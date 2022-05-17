@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import { useState, createContext } from "react";
 import { Helmet } from "react-helmet";
 import { ThemeProvider } from "styled-components";
-import Routes from "./Routes";
+import AppRoutes from "./Routes";
 import { GlobalStyle } from "./styles/globalStyles";
 import { darkTheme, lightTheme } from "./styles/theme";
 
-export const ThemeContext = React.createContext(null);
+export const ThemeContext = createContext(null);
 
 const App = () => {
     const [theme, setTheme] = useState("light");
@@ -24,7 +24,7 @@ const App = () => {
                         rel="stylesheet"
                     />
                 </Helmet>
-                <Routes />
+                <AppRoutes />
             </ThemeProvider>
         </ThemeContext.Provider>
     );
