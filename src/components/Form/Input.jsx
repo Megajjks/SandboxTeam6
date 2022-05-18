@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SIinput, SBbuutton } from "./styles"
+import { SIinput, SBbuutton } from "./RegistroStyles"
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai"
 
 export default function ToggleInput({ value, onChange, name, pattern }) {

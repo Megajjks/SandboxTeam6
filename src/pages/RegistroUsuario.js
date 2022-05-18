@@ -1,10 +1,10 @@
 import React from "react";
 import Select from 'react-select';
+import { GlobalStyle } from "../styles/globalStyles";
 import { SFixedContainer } from "../components/Containers/styles";
 // import Form from "../components/Form/Form";
 import {
   SBbutton,
-  // SBbuutton,
   SFform,
   SFoormTitle,
   SIinput,
@@ -13,7 +13,7 @@ import {
   SLlabel,
   SLlaabel,
 
-} from "../components/Form/styles";
+} from "../components/Form/RegistroStyles";
 // import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { Link } from "react-router-dom";
 
@@ -106,6 +106,7 @@ export const RegistroUsuario = () => {
   return (
 
     <><SFixedContainer>
+      <GlobalStyle />
       <SFoormTitle> CREAR CUENTA </SFoormTitle>
       <SFform className="registroUsuario" onSubmit={handleSubmit}>
         {error && <SDdiv className="registroUsuario__error"> {error}  </SDdiv>}
@@ -141,6 +142,7 @@ export const RegistroUsuario = () => {
         </SBbutton>
       </SFform>
     </SFixedContainer>
+    
       <SIimg src={cover} alt="coverAlt" /></>
 
   );
