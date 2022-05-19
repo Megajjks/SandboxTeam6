@@ -21,3 +21,12 @@ export const btnReset = css`
     text-align: inherit;
     padding: 0;
 `;
+
+export const sizeQuery = {
+  MobileS: "320px",
+  MobileM: "375px",
+  MobileL: "425px",
+  Tablet: "768px",
+  Laptop: "1024px",
+  LaptopL: "1440px",
+};
