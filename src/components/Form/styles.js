@@ -6,13 +6,11 @@ export const SForm = styled.form`
   width: 100%;
   background: ${({ theme }) => theme.bg2};
   border-radius: ${v.borderRadius};
-  padding: ${v.mdSpacing};
-  border: solid 1px red;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem;
 `;
 
 export const SFormTitle = styled.span`
