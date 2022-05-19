@@ -22,7 +22,7 @@ export default function ToggleInput({ value, onChange, name, pattern }) {
         value={value}
         onChange={onChange}
       />
-      <ButtonPassword onClick={toggleEye}>
+      <ButtonPassword type="button" onClick={toggleEye}>
         {eye ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
       </ButtonPassword>
     </ToggleWrapper>

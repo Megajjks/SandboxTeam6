@@ -14,7 +14,6 @@ export const SLlabel = styled.label`
   min-width: 320px;
   display: flex;
   flex-direction: column;
-  border: solid 1px green;
   font-size: 14px;
   font-weight: 600;
   margin-left: 0px;
@@ -27,7 +26,6 @@ export const SLlabel = styled.label`
 export const SLlaabel = styled.label`
   min-width: 320px;
   display: block;
-  border: solid 1px red;
   font-size: 11px;
   font-weight: 600;
   margin-left: 0px;
@@ -72,7 +70,6 @@ export const SFform = styled.form`
   width: 100%;
   background: ${({ theme }) => theme.bg2};
   border-radius: ${v.borderRadius};
-  border: solid 1px red;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -4,7 +4,6 @@ import { useState } from "react";
 import axios from "axios";
 import { SFixedContainer, SIimg } from "./LoginStyle";
 import Form from "../components/Form/Form";
-import ToggleInput from "../components/Form/ToggleInput";
 import cover from "../assets/ilustration/Get-Talent.jpg";
 const passwordPattern =
   "^(?=.*[a-z])(?=.*[A-Z])(?=.*)(?=.*[~!-@#()$%^+=&*])[A-Za-z~!-@#()$%^+=&*]{6,20}$";
