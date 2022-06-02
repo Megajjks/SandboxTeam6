@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import background from "../assets/ilustration/Get-Talent.jpg";
-import { sizeQuery } from "../styles/variables";
+import background from "../../assets/ilustration/Get-Talent.jpg";
+import { sizeQuery, v, btnReset } from "../../styles/variables";
 
 export const SFixedContainer = styled.div`
   /* Esta es una forma mas rapida de maquetar la vista de login, usando grid layout */
@@ -25,4 +25,36 @@ export const SIimg = styled.div`
     /* Cuando la vista sea menor que 768 la imagen desaparece, no se necesita en tablet o mobile */
     display: none;
   }
+`;
+
+export const SFform = styled.form`
+  width: 100%;
+  background: ${({ theme }) => theme.bg2};
+  border-radius: ${v.borderRadius};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+`;
+
+export const SFoormTitle = styled.div`
+  font-size: 25px;
+  font-weight: 600;
+`;
+
+export const SBbutton = styled.button`
+  ${btnReset};
+  width: 50%;
+  background: ${({ theme }) => theme.bgSecondary};
+  color: ${({ theme }) => theme.textSecondary};
+  padding: ${v.smSpacing};
+  display: flex;
+  float: center;
+  background-color: #173b5a;
+  color: white;
+  justify-content: center;
+  border-radius: ${v.borderRadius};
+  margin-top: ${v.mdSpacing};
+  cursor: pointer;
 `;

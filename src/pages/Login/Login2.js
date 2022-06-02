@@ -3,8 +3,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { SFixedContainer, SIimg } from "./LoginStyle";
-import Form from "../components/Form/Form";
-import cover from "../assets/ilustration/Get-Talent.jpg";
+import Form from "../../components/Form/Form";
 const passwordPattern =
   "^(?=.*[a-z])(?=.*[A-Z])(?=.*)(?=.*[~!-@#()$%^+=&*])[A-Za-z~!-@#()$%^+=&*]{6,20}$";
 const urlApi = "https://gettalent-6.herokuapp.com/login/";

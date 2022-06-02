@@ -3,7 +3,7 @@ import HomePage from "./pages/HomePage";
 // import Login from "./pages/Login";
 import Layout from "./components/Layout/Layout";
 import { RegistroUsuario } from "./pages/RegistroUsuario";
-import Login from "./pages/Login";
+import Login from "./pages/Login/Login";
 
 export default function AppRoutes() {
     return (
