@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React from "react";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import {
   SFixedContainer,
   SIimg,
@@ -11,6 +11,7 @@ import {
 } from "./LoginStyle";
 import InputText from "../../components/Atoms/InputText/InputText";
 import SpinnerSmall from "../../components/Atoms/Spinner/SpinnerSmall";
+import Toast from "../../components/Atoms/Toast/Toast";
 
 /* Constantes */
 const passwordPattern =
@@ -25,24 +26,28 @@ export const Login = () => {
   const [formData, setFormData] = useState(INITIAL_STATE);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
-
+    setError("");
     setLoading(true);
     try {
-      const { status, data } = await axios.post(urlApi, {
+      const { data } = await axios.post(urlApi, {
         email: formData.email,
         password: formData.password,
       });
       setLoading(false);
-      console.log("data", data);
-      console.log("status", status);
-      //if (status >= 200 && status < 300) console.log("Respuesta ok:", data);
+      //guardamos datos en el localstorage
+      saveLocalStorage(data);
+      //redireccionamos
+      navigate("/home");
     } catch (error) {
-      setError("Algo salio mal :c, vuelve a intentarlo");
-
-      console.error(error);
+      setError(
+        error
+          ? error.response.data.msg
+          : "Algo salio mal :c, vuelve a intentarlo"
+      );
     } finally {
       setLoading(false);
     }
@@ -55,12 +60,23 @@ export const Login = () => {
     });
   };
 
+  const saveLocalStorage = (data) => {
+    //Borramos localstorage previo
+    localStorage.clear();
+    //guardamos el token
+    localStorage.setItem("accesstoken", JSON.stringify(data.tokens.access));
+    localStorage.setItem("refreshtoken", JSON.stringify(data.tokens.refresh));
+  };
+
   return (
     <>
       <SFixedContainer>
         <SIimg />
         <SFform onSubmit={onSubmitHandler}>
           <SFoormTitle> CREAR CUENTA </SFoormTitle>
+
+          {error && <Toast color="error">{error}</Toast>}
+
           <InputText
             label="Email"
             id="email"
@@ -96,4 +112,5 @@ export const Login = () => {
     </>
   );
 };
+
 export default Login;

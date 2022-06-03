@@ -39,7 +39,7 @@ export const SFform = styled.form`
 `;
 
 export const SFoormTitle = styled.div`
-  font-size: 25px;
+  font-size: 2rem;
   font-weight: 600;
 `;
 

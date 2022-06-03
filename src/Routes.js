@@ -7,29 +7,29 @@ import Login from "./pages/Login/Login";
 
 export default function AppRoutes() {
     return (
-        <Router>
-            <Routes>
-                {/* Rutas de accesso publico */}
-                <Route path="/" element={<HomePage />} />
+      <Router>
+        <Routes>
+          {/* Rutas de accesso publico */}
+          <Route path="/" element={<Login />} />
 
-                <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<HomePage />} />
 
-                <Route path="/register" element={<RegistroUsuario />} />
+          <Route path="/register" element={<RegistroUsuario />} />
 
-                {/* Rutas privadas (acceso a gente que ya se logueo) */}
-                {/* <Route element={<Layout/>}>
+          {/* Rutas privadas (acceso a gente que ya se logueo) */}
+          {/* <Route element={<Layout/>}>
                  <Route exact path="/dashboard" element={<HomePage />}/>
             </Route> */}
 
-                <Route path="/dashboard" element={<Layout />} />
+          <Route path="/dashboard" element={<Layout />} />
 
-                <Route path="/registerva" element={<HomePage />} />
+          <Route path="/registerva" element={<HomePage />} />
 
-                <Route path="*" element={<h1>Error 404: No encontrado</h1>} />
-                {/* <Route path="/HomePage" >
+          <Route path="*" element={<h1>Error 404: No encontrado</h1>} />
+          {/* <Route path="/HomePage" >
             <HomePage/>
             </Route> */}
-            </Routes>
-        </Router>
+        </Routes>
+      </Router>
     );
 };
