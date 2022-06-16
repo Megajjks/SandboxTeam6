@@ -32,8 +32,8 @@ export const RegistroUsuario = () => {
 
   // Valores para dropdown y constante de cambio
   const options = [
-    { value: "Empresa", label: "Soy una empresa" },
-    { value: "Solicitante", label: "Busco trabajo" },
+    { value: true, label: "Soy una empresa" },
+    { value: false, label: "Busco trabajo" },
   ];
 
   const onDropdownChange = (value) => {
@@ -78,9 +78,10 @@ export const RegistroUsuario = () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        email,
+        email, //email = email
         password,
         confirmPassword,
+        is_empleador: value?.value,
       }),
     };
 
