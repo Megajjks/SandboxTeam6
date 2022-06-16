@@ -12,7 +12,8 @@ import {
 import InputText from "../../components/Atoms/InputText/InputText";
 import SpinnerSmall from "../../components/Atoms/Spinner/SpinnerSmall";
 import Toast from "../../components/Atoms/Toast/Toast";
-
+import { ParseRol } from "../../Utils/ParseData";
+import useAuth from "../../Hooks/useAuth";
 /* Constantes */
 const passwordPattern =
   "^(?=.*[a-z])(?=.*[A-Z])(?=.*)(?=.*[~!-@#()$%^+=&*])[A-Za-z~!-@#()$%^+=&*]{6,20}$";
@@ -27,6 +28,7 @@ export const Login = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const { setAuth } = useAuth();
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
@@ -40,6 +42,8 @@ export const Login = () => {
       setLoading(false);
       //guardamos datos en el localstorage
       saveLocalStorage(data);
+      //guardamos en el contexto
+      saveInAuthContext();
       //redireccionamos
       navigate("/home");
     } catch (error) {
@@ -66,6 +70,14 @@ export const Login = () => {
     //guardamos el token
     localStorage.setItem("accesstoken", JSON.stringify(data.tokens.access));
     localStorage.setItem("refreshtoken", JSON.stringify(data.tokens.refresh));
+    localStorage.setItem("role", JSON.stringify(ParseRol(data.is_empleador)));
+  };
+
+  const saveInAuthContext = () => {
+    setAuth({
+      token: localStorage.getItem("accesstoken"),
+      role: localStorage.getItem("role"),
+    });
   };
 
   return (
