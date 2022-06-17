@@ -111,36 +111,36 @@ const Sidebar = () => {
 };
 
 const linksArray = [
-    {
-        label: "HomePage",
-        icon: <AiOutlineHome />,
-        to: "/home",
-        notification: 0,
-    },
-    // {
-    //     label: "HomePAge",
-    //     icon: <AiOutlineHome />,
-    //     to: "/home",
-    //     notification: 0,
-    // },
-    {
-        label: "RegistroVacantes",
-        icon: <MdOutlineAnalytics />,
-        to: "/registerva",
-        notification: 0,
-    },
-    {
-        label: "Login",
-        icon: <BsPeople />,
-        to: "/login",
-        notification: 0,
-    },
-    {
-        label: "Register",
-        icon: <AiOutlineApartment />,
-        to: "/register",
-        notification: 0,
-    },
+  {
+    label: "HomePage",
+    icon: <AiOutlineHome />,
+    to: "home",
+    notification: 0,
+  },
+  // {
+  //     label: "HomePAge",
+  //     icon: <AiOutlineHome />,
+  //     to: "/home",
+  //     notification: 0,
+  // },
+  {
+    label: "RegistroVacantes",
+    icon: <MdOutlineAnalytics />,
+    to: "registerva",
+    notification: 0,
+  },
+  {
+    label: "Login",
+    icon: <BsPeople />,
+    to: "login",
+    notification: 0,
+  },
+  {
+    label: "Register",
+    icon: <AiOutlineApartment />,
+    to: "register",
+    notification: 0,
+  },
 ];
 
 const secondaryLinksArray = [

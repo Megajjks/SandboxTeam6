@@ -12,7 +12,7 @@ import {
 import InputText from "../../components/Atoms/InputText/InputText";
 import SpinnerSmall from "../../components/Atoms/Spinner/SpinnerSmall";
 import Toast from "../../components/Atoms/Toast/Toast";
-import { ParseRol } from "../../Utils/ParseData";
+import { ParseRol, getRolePath } from "../../Utils/ParseData";
 import useAuth from "../../Hooks/useAuth";
 /* Constantes */
 const passwordPattern =
@@ -39,13 +39,14 @@ export const Login = () => {
         email: formData.email,
         password: formData.password,
       });
+      const currentRole = getRolePath(ParseRol(data.is_empleador));
       setLoading(false);
       //guardamos datos en el localstorage
       saveLocalStorage(data);
       //guardamos en el contexto
       saveInAuthContext();
       //redireccionamos
-      navigate("/home");
+      navigate(`${currentRole}/home`);
     } catch (error) {
       setError(
         error
