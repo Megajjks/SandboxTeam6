@@ -75,22 +75,22 @@ const Form = ({ title, formArr, submitBtn, onSubmit, redirect }) => {
 };
 
 Form.defaultProps = {
-    title: "Sign In",
-    formArr: [
-        {
-            label: "Email",
-            name: "email",
-            type: "text",
-        },
-        {
-            label: "Contraseña",
-            name: "contraseña",
-            type: "password",
-        },
-    ],
-    submitBtn: "Sign In",
-    onSubmit: (form) => console.log(form),
-    redirect: null,
+  title: "Sign In",
+  formArr: [
+    {
+      label: "Email",
+      name: "email",
+      type: "text",
+    },
+    {
+      label: "Contraseña",
+      name: "contraseña",
+      type: "password",
+    },
+  ],
+  submitBtn: "Sign In",
+  onSubmit: (form) => console.log(form),
+  redirect: null,
 };
 
 export default Form;
